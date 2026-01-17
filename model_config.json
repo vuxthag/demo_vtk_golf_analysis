@@ -1,0 +1,10 @@
+{
+  "back": {
+    "threshold": 18.369236316090813,
+    "samples": 43
+  },
+  "side": {
+    "threshold": 19.88825675723202,
+    "samples": 41
+  }
+}
