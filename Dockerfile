@@ -1,6 +1,6 @@
 FROM python:3.11-slim
 
-# Install system libs for opencv headless + mediapipe
+# System deps cho mediapipe + opencv-headless
 RUN apt-get update && apt-get install -y \
     libgl1 \
     libglib2.0-0 \
@@ -13,11 +13,14 @@ RUN apt-get update && apt-get install -y \
 WORKDIR /app
 
 COPY requirements.txt .
-
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
+# 🔥 QUAN TRỌNG
+ENV STREAMLIT_SERVER_ADDRESS=0.0.0.0
+
 EXPOSE 8080
 
-CMD ["streamlit", "run", "streamlit_app.py", "--server.port=8080", "--server.address=0.0.0.0"]
+# ❌ KHÔNG truyền --server.port
+CMD ["streamlit", "run", "streamlit_app.py"]
