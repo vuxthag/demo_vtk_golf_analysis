@@ -1,6 +1,6 @@
 streamlit==1.35.0
 
-# 🔥 BẮT BUỘC – override OpenCV GUI
+# 🔥 CHỈ CHO PHÉP HEADLESS
 opencv-python-headless==4.10.0.84
 opencv-contrib-python-headless==4.10.0.84
 
