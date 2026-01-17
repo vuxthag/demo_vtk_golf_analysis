@@ -1,2 +1,5 @@
 [build]
-builder = "NIXPACKS"
+builder = "nixpacks"
+
+[build.env]
+PIP_CONSTRAINT = "constraints.txt"
