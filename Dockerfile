@@ -17,10 +17,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-# 🔥 QUAN TRỌNG
-ENV STREAMLIT_SERVER_ADDRESS=0.0.0.0
-
 EXPOSE 8080
 
-# ❌ KHÔNG truyền --server.port
-CMD ["streamlit", "run", "streamlit_app.py"]
+CMD sh -c "streamlit run streamlit_app.py --server.address 0.0.0.0 --server.port ${PORT:-8080}"
